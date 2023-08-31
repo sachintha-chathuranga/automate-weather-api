@@ -1,22 +1,21 @@
-const dotenv = require('dotenv');
 const express = require('express');
-
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 const app = express();
 const cors = require('cors');
 
-dotenv.config({ path: './config/.env' });
-
 const usersRout = require('./router/users');
-const postsRout = require('./router/posts')
 
+//All thirdparty middleware
 app.use(express.json());
 app.use(cors());
+dotenv.config();
 
-
-//if request comming to this end point usersRout file will execute
 app.use('/api/users', usersRout);
-app.use('/api/posts', postsRout);
 
 const PORT = process.env.PORT || 5001;
 
-app.listen(PORT, console.log(`Server running on PORT: ${PORT}`));
+//connect to the Database
+mongoose.connect("mongodb://localhost/test")
+.then(() => app.listen(PORT, console.log(`Server running on PORT: ${PORT}`)))
+.catch(e => console.log(e));
