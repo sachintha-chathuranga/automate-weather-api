@@ -1,0 +1,27 @@
+{
+  "name": "automate-weather-api",
+  "version": "1.0.0",
+  "description": "this is a api use to get weather details of the users and send it in to users emails",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachintha-chathuranga/automate-weather-api.git"
+  },
+  "author": "mmsc.ranasinghe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sachintha-chathuranga/automate-weather-api/issues"
+  },
+  "homepage": "https://github.com/sachintha-chathuranga/automate-weather-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^5.13.20",
+    "nodemon": "^3.0.1"
+  }
+}
