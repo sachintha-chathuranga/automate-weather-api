@@ -48,6 +48,6 @@ cron.schedule('0 */3 * * *', () =>{
 
 const PORT = process.env.PORT || 5001;
 //connect to the Database and then listen on port that given
-mongoose.connect("mongodb://localhost/test", {useUnifiedTopology: true , useNewUrlParser: true })
+mongoose.connect(process.env.DATABASE_URL, {useUnifiedTopology: true , useNewUrlParser: true })
 .then(() => app.listen(PORT, console.log(`Server running on PORT: ${PORT}`)))
 .catch(e => console.log(e));
