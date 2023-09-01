@@ -25,6 +25,7 @@ exports.updateUser = async (req, res) =>{
         const user = await User.findByIdAndUpdate(id, {
             location
         });
+        user.location = location;
         res.status(200).json(user);
     } catch (error) {
         switch(error.name){
