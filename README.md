@@ -27,7 +27,15 @@ you can get API key after sign in to [open weather map](https://home.openweather
 
 To run this app corectly you need to have make sure mongoDB database install in your computer.
 
+## Routes that can be use with  this api
 
+1.localhost:5000/api/users/signUp
+
+2.localhost:5000/api/users/update?id=
+
+3.localhost:5000/api/weathers/4?date=9/1/2023
+!important: user id must be combin to url. in this case it is 4.
+!important: date must be pass as query on this format.
 
 
 
