@@ -7,9 +7,8 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sachintha-chathuranga/automate-weather-api.git"
+  "engines": {
+    "node": "14.17.0"
   },
   "author": "mmsc.ranasinghe",
   "license": "ISC",
