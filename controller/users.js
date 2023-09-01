@@ -2,6 +2,7 @@ const User = require('../models/User');
 
 exports.storeUser = async (req, res) =>{
     const { email, location} =  req.body;
+
     try {
         const user = new User({
             email,
@@ -10,14 +11,26 @@ exports.storeUser = async (req, res) =>{
         await user.save();
         res.status(200).json(user);
     } catch (error) {
+        switch(error.code){
+            case 11000:
+                return res.status(400).json("Email Already taken"); 
+        }
         res.status(400).json(error.message);
     }
 }
-exports.getAllUsers = async (req, res) =>{
+exports.updateUser = async (req, res) =>{
+    const location =  req.body.location;
+    const id = req.query.id;
     try {
-        const users = await User.find();
-        res.status(200).json(users);
+        const user = await User.findByIdAndUpdate(id, {
+            location
+        });
+        res.status(200).json(user);
     } catch (error) {
+        switch(error.name){
+            case "CastError":
+                return res.status(400).json("User not Found");
+        }
         res.status(400).json(error.message);
     }
 }
