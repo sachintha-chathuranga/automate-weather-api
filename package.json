@@ -7,9 +7,6 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "engines": {
-    "node": "14.17.0"
-  },
   "author": "mmsc.ranasinghe",
   "license": "ISC",
   "bugs": {
