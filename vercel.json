@@ -11,5 +11,15 @@
             "src": "/(.*)",
             "dest": "app.js"
         }
-    ]
+    ],
+    "crons": [
+        {
+          "path": "./api-calls/fetch",
+          "schedule": "0 * * * *"
+        },
+        {
+          "path": "./mailer/mail",
+          "schedule": "0 */3 * * *"
+        }
+      ]
 }

@@ -29,7 +29,7 @@ const corsOptions = {
 
 // add All thirdparty middleware in to express route
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 dotenv.config();
 
 // api endpoint for CRUD operation and handle the different route
@@ -37,14 +37,14 @@ app.use('/api/users', usersRout);
 app.use('/api/weathers', weatherRout);
 
 // this fetching data from openweaherapp Api and store in db hourly
-cron.schedule('0 * * * *', () =>{
-    fetchData();
-});
+// cron.schedule('0 * * * *', () =>{
+//     fetchData();
+// });
 
 // this will send the emails to every user in database every 3  hour
-cron.schedule('0 */3 * * *', () =>{
-    sendMail();
-});
+// cron.schedule('0 */3 * * *', () =>{
+//     sendMail();
+// });
 
 const PORT = process.env.PORT || 5001;
 //connect to the Database and then listen on port that given

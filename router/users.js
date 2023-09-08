@@ -10,6 +10,6 @@ router.route('/signUp').post(validation, storeUser);
 
 // route to update users location
 router.route('/update').put(updateUser);
-// router.route('/').get(getAllUsers);
+
 
 module.exports = router;
